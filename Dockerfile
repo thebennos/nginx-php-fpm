@@ -18,15 +18,8 @@ add-apt-repository ppa:nginx/$nginx && \
 apt-get update && \
 apt-get upgrade -y && \
 BUILD_PACKAGES="supervisor git nginx php5-fpm git php5-mysql php5-mysql php-apc php5-curl php5-gd php5-intl php5-mcrypt php5-memcache php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-pgsql php5-mongo pwgen php5-mysqlnd php5-imagick" && \
-apt-get -y install $BUILD_PACKAGES && \
-apt-get remove --purge -y software-properties-common && \
-apt-get autoremove -y && \
-apt-get clean && \
-apt-get autoclean && \
-echo -n > /var/lib/apt/extended_states && \
-rm -rf /var/lib/apt/lists/* && \
-rm -rf /usr/share/man/?? && \
-rm -rf /usr/share/man/??_*
+apt-get -y install $BUILD_PACKAGES
+
 
 # tweak nginx config
 RUN sed -i -e"s/worker_processes  1/worker_processes 5/" /etc/nginx/nginx.conf && \
