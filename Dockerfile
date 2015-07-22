@@ -51,9 +51,10 @@ RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/defau
 
 # Adding Github Clone
 # Token = 73019ea4fb9bc10344c032b2105804ba30fa585a
+# NEW Token = 8397af42280470a89b1436bbb07d4643ca37cead
 # Clone our private GitHub Repository
 # repo = https://github.com/thebennos/omm_dataworker.git
-RUN git clone -b DEV https://73019ea4fb9bc10344c032b2105804ba30fa585a:x-oauth-basic@github.com/thebennos/omm_dataworker.git /myapp
+RUN git clone -b DEV https://8397af42280470a89b1436bbb07d4643ca37cead:x-oauth-basic@github.com/thebennos/omm_dataworker.git /myapp
 RUN cp -R /myapp/* /usr/share/nginx/html
 
 # Supervisor Config
